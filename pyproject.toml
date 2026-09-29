@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-attention"
+version = "0.2.0"
+description = "Educational self-attention library in NumPy, with a natural-language-to-SQL pipeline for oil-well interventions"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["attention", "nlp", "numpy", "education", "text-to-sql"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+app = ["streamlit"]
+dev = ["pytest", "streamlit"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
